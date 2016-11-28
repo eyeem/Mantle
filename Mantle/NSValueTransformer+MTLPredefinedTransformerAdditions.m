@@ -71,7 +71,7 @@ NSString * const MTLBooleanValueTransformerName = @"MTLBooleanValueTransformerNa
 
 	return [MTLValueTransformer
 		reversibleTransformerWithForwardBlock:^ id (NSArray *dictionaries) {
-			if (dictionaries == nil) return nil;
+			if (dictionaries == nil || dictionaries == NSNull.null) return nil;
 
 			NSAssert([dictionaries isKindOfClass:NSArray.class], @"Expected an array of dictionaries, got: %@", dictionaries);
 
